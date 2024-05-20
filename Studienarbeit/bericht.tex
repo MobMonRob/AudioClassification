@@ -1,0 +1,135 @@
+%&bericht
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Descr:       Vorlage für Berichte der DHBW-Karlsruhe
+%% Author:      Prof. Dr. Jürgen Vollmer, juergen.vollmer@dhbw-karlsruhe.de
+%% $Id: bericht.tex,v 1.25 2020/03/13 15:07:45 vollmer Exp $
+%%  -*- coding: utf-8 -*-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+   ngerman          % neue deutsche Rechtschreibung
+  ,a4paper          % Papiergrösse
+% ,twoside          % Zweiseitiger Druck (rechts/links)
+% ,10pt             % Schriftgrösse
+% ,11pt
+  ,12pt
+  ,pdftex
+%  ,disable         % Todo-Markierungen auschalten
+]{report}
+
+\input{ads/header}
+
+%% ACHTUNG, wenn man eine eigene Formatdatei (bericht.fmt) benutzt, werden Änderungen an bericht.sty
+%% erst wirksam, wenn die Format-Datei neu erzeugt wurde!!!
+%% Genauer alle Änderungen, die textuell vor der nächsten Zeile ".... endofdump...." stehen
+%% werden erst wirksam, wenn die Formatdatei neu erzeugt wurde
+%%\csname endofdump\endcsname
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Angaben zur Arbeit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Autor}{Nico Argast, Johannes Methfessel, Lukas Weber}
+\newcommand{\MatrikelNummer}{9826501, 3814063, 8157471}
+\newcommand{\Kursbezeichnung}{TINF21B4}
+
+%\newcommand{\FirmenName}{}
+\newcommand{\FirmenStadt}{Karlsruhe}
+\newcommand{\FirmenLogoDeckblatt}%{\fbox{\includegraphics[width=3cm]{}}}
+
+% Falls es kein Firmenlogo gibt:
+%  \newcommand{\FirmenLogoDeckblatt}{}
+
+%\newcommand{\BetreuerFirma}{}
+\newcommand{\BetreuerDHBW}{Silvan M. Müller}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Wird auf dem Deckblatt und in der Erklärung benutzt:
+%\newcommand{\Was}{Projekt-/Studien-/Bachleorarbeit}
+%\newcommand{\Was}{Projektarbeit 2 }
+\newcommand{\Was}{Studienarbeit}
+%\newcommand{\Was}{Bachleorarbeit}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Titel}{Akustische Vermessung von robotischen Schleifprozessen zur prädiktiven Wartung}
+\newcommand{\AbgabeDatum}{20. Mai 2024}
+
+\newcommand{\Dauer}{24 Wochen}
+
+% \newcommand{\Abschluss}{Bachelor of Engineering}
+\newcommand{\Abschluss}{Bachelor of Science}
+
+% \newcommand{\Studiengang}{Informatik / Informationstechnik}
+\newcommand{\Studiengang}{Informatik / Angewandte Informatik}
+
+\hypersetup{%%pdfauthor={\Autor},pdftitle={\Titel},pdfsubject={\Was}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Wenn \includeonly{..} benutzt wird, werden nur diese Kaptitel ausgegeben.
+%\includeonly{abk,kapitel1,kapitel2,kapitel3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength {\marginparwidth }{2cm}
+% Benutzt man das "biblatex"-Paket, dann muß das hier stehen:
+% siehe auch die mit BIBLATEX markierten Zeilen in bericht.sty
+\bibliography{bericht}
+
+\begin{document}
+
+\input{ads/deckblatt}
+
+\input{ads/erklaerung}
+
+\input{ads/abstract}
+
+\newpage
+\tableofcontents           % Inhaltsverzeichnis hier ausgeben
+\listoffigures             % Liste der Abbildungen
+% \listoftables              % Liste der Tabellen
+% \lstlistoflistings         % Liste der Listings
+% \listofequations           % Liste der Formeln
+
+% Jetzt kommt der "eigentliche" Text
+\include{ads/abk}             % Abkürzungsverzeichnis
+\include{content/kapitel1}
+\part{Grundlagen und Stand der Technik}
+\include{content/kapitel2}
+\include{content/kapitel3}
+\part{Durchführung}
+\include{content/kapitel5}
+\include{content/kapitel6}
+\include{content/kapitel7}
+\part{Fazit und Ausblick}
+\include{content/kapitel8}
+\include{content/kapitel9}
+
+% Ab hier beginnt der Anhang
+\appendix
+
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+
+% Haben Sie das "biblatex"-Paket nicht installiert, benutzen Sie folgendes:
+% Ohne das "biblatex"-Paket (s. bericht.sty) produziert folgendes
+% "deutsche" Zitate in Literaturverzeichnissen gemaß der Norm DIN 1505,
+% Teil 2 vom Jan. 1984.
+% Die Zitatmarken werden alphabetisch nach Verfassern
+% sortiert und sind durch abgekürzte Verfasserbuchstaben plus
+% Erscheinungsjahr in eckigen Klammern gekennzeichnet.
+
+%\bibliographystyle{alphadin}
+%\bibliography{bericht}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% BIBLATEX
+% Benutzt man das "biblatex"-Paket, muß man folgendes schreiben:
+\def\refname{Literaturverzeichnis}
+\printbibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+
+\end{document}

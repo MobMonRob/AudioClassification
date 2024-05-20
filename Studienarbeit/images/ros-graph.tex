@@ -1,0 +1,43 @@
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        auto,
+        defaultS/.style={
+            thick,
+            fill=white,
+            align=center,
+            minimum height=2em,
+            draw=black
+        },
+        boxS/.style={
+        	defaultS,
+        	rectangle
+        },
+        ellipseS/.style={
+        	defaultS,
+        	ellipse
+        },
+        arrowS/.style={
+            -{Latex[length=0.5em]}
+        },
+        lineS/.style={-},
+    ]
+    
+	\node[ellipseS] (N1) at (0,1) {Node};
+	\node[ellipseS] (N2) at (6,1) {Node};
+	\node[boxS] (T) at (3,0) {Topic};
+	
+	\draw[arrowS] (N1) |- node[midway,below]{Veröffentlicht} (T);
+	\draw[arrowS] (T) -| node [midway,below] {Aboniert} (N2);
+	\draw[arrowS,dotted] (N1) -- node [midway,above] {Service-Aufruf} (N2);
+    
+    \end{tikzpicture}
+    \caption{Einfacher ROS-Graph}
+    \label{fig:ros-graph}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

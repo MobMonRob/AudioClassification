@@ -1,0 +1,11 @@
+\chapter{ROS-Node zur Analyse der Signale}
+\label{Kapitel7}
+
+Um nun die Algorithmen zum Auswerten der Audio-Signale über ROS zur Verfügung zu stellen wird in diesem Kapitel zu Erstellung einer ROS-Node beschrieben, welche die notwendigen Daten publisht. Die Anforderungen an diese Node sind, dass man im Vorhinein einen Pfad angibt, unter welchem das zu analysierende Audiosignal jeweils verfügbar ist. Des Weiteren müssen die Audiosignale länger als eine Sekunde sein, da die Genauigkeit der Ausgabe auf Sekundenebene ist.
+
+Um nun die ROS-Node zu erzeugen wird eine Python-Methode erstellt. Der erste Schritt darin ist über die Python-Bibilothek rospy eine Node zu initialisieren. In unserem Fall erhält die Node den Namen ,,\texttt{grinding\_audio\_data\_publisher}''. Da die Node nur Daten publishen soll, wird im nächsten Schritt ein Publisher erzeugt, auch über rospy. Dieser Publisher ist das Topic, unter dem gepublished wird, mit dem Namen ,,\texttt{grinding\_data}'', zusätzlich wird hier festgelegt, dass die Nachrichten als \texttt{String} gepublished werden. Nachdem nun die Node und das Topic erstellt wurden, werden die Daten analysiert, indem das Audiosignal, zu welchem der hart-codierte Pfad führt, ausgelesen und anschließend verarbeitet wird. Für die Analyse werden getrennt die zwei Algorithmen aufgerufen, welche im letzten Kapitel beschrieben wurden. Algorithmus 1 berechnet die RPMs und deren Intensität, Algorithmus 2 berechnet die Grinding-Stati.Diese Daten werden anschließend über eine for-Schleife gepublished. Hierbei werden immer die Daten für eine Sekunde als String ausgegeben. Das Publishen erfolgt mit einer Frequenz von 10Hz.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

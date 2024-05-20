@@ -1,0 +1,51 @@
+\chapter{Fazit}
+\label{Kapitel8}
+
+In dieser Arbeit wurde ein umfassender Ansatz zur Analyse von Audiosignalen im Kontext eines robotischen Schleifprozesses entwickelt und evaluiert. Die Hauptziele bestanden darin, Frequenzmuster zu erkennen, die mit der Drehgeschwindigkeit des Schleifers und dem Anpressdruck korrelieren, sowie die Machbarkeit einer akustischen Überwachung zur prädiktiven Wartung zu prüfen. Hierzu wurden verschiedene Methoden der Signalverarbeitung angewendet und verglichen. In diesem Kapitel werden nun die Ergebnisse nochmal kurz zusammengefasst und kritisch refektiert.
+
+\section{Zusammenfassung der Hauptergebnisse}
+\subsection{Datenaufnahme}
+
+Bei der Datenaufnahme wurden zwei Methoden untersucht: automatisches und manuelles Schleifen. Das automatische Schleifen durch vorprogrammierte Bahnen erwies sich als problematisch, da der konstante Anpressdruck bei schrägen Werkstücken dazu führte, dass der Schleifer kippte. Beim manuellen Schleifen war es schwierig, konsistent zu arbeiten, weil die Steuerung komplizierter ist und der Anpressdruck zu Beginn oft zu hoch war, was zu einer ungleichmäßigen Druckverteilung über das Schleifstück führte. Zudem gab es anfänglich Probleme mit der Befestigung des Mikrofons, das sich durch die Vibrationen des Roboters während des Schleifens absenkte und die Distanz zum Schleifer veränderte. Dieses Problem wurde durch erneutes Festziehen der Schrauben behoben.
+
+\subsection{Ergebnisse der Datenanalyse}
+
+Zur Analyse der Schleifgeräusche wurden drei verschiedene Audioanalysemethoden getestet: Die Fast Fourier Transformation, die Short-Time Fourier Transformation und die Continuous Wavelet Transformation.
+
+\begin{itemize}
+    \item \textbf{\ac{FFT}}:
+        Die \ac{FFT} zeigte auf, dass in den Audiodaten Informationen enthalten sind, welche sich möglicherweise auf die verwendete Drehzahl und die Schleifleistung zurückführen lassen. Auffällig an dieser Stelle war eine Anomalie bei einer SOLL-Drehzahl von 4000 RPM, da hier die doppelte Frequenz und nicht die einfache Frequenz besonders stark ausgeprägt war.
+    \item \textbf{\ac{STFT}}:
+        Die \ac{STFT} lieferte weitere detaillierte Informationen, vor allem über die zeitliche Komponente. Auch hier war die Anomalie bei einer SOLL-Drehzahl noch deutlich zu erkennen, was zu der Annahme führte, dass es sich hierbei um ein Rauschen handelt, welches nicht verhindert werden kann, da es sich über das gesamte Audiosignal ausbreitet. Auf grundlage der STFT konnte eine erste Methode zur Berechnung der IST-Drehzahl implementiert werden, welche jedoch sehr fehleranfällig war. Da die Ergebnisse bei der \ac{STFT} stark von den gewählten Parametern abhängig sind, kam die Vermutung auf, dass die Ergebnisse durch eine \ac{CWT} besser sind.
+
+    \item \textbf{\ac{CWT}}:
+        Die \ac{CWT} bestätigte nun alle vorherigen Vermutungen und hat bewiesen, dass eine Berechnung der IST-Drehzahl bei 6000 RPM mit hoher Wahrscheinlichkeit gelingen kann. Eine Auswertung von anderen IST-Drehzahlen blieb weiterhin sehr ungenau. Zusätzlich zeigte sich durch die CWT eine Korrelation der Schleifleistung und der dreifachen Frequenz der Drehzahl. Als diese Frequenz dann isoliert betrachtet wurde zeigte sich, dass ein auffälliges Rauschen im Bereich des 5-10-fachen der Drehzahl während des Schleifprozesses auftritt. Durch die Analyse der genauen Existenz dieses Rauschen konnte dann eine Methode entwickelt werden, die Anhand der Standardabweichung der stärksten Drehzahl innerhalb eines Zeitintervalls bestimmt, ob in diesem Intervall geschliffen wurde oder nicht. Hierbei diente ein fester Grenzwert  als Entscheidungskriterium.
+\end{itemize}
+
+
+\section{Kritische Reflexion}
+
+Auf den ersten Blick scheinen die Ergebnisse sehr gut zu sein, jedoch müssen hierbei einige Dinge beachtet werden. Erstens wurden alle Audiosignale in einer geschlossenen Atmosphäre aufgenommen, wobei immer das gleiche Material geschliffen wurde. Dies stellt eine kontrollierte, aber auch stark eingeschränkte Umgebung dar. 
+
+Zusätzlich ist es möglich, dass gewisse Anomalien nicht durch das Schleifen selbst, sondern durch die Befestigung des Materials entstanden sind. Beispielsweise könnte die gefundene Anomalie bei der 10-fachen Drehzahl nicht auf das Schleifen zurückzuführen sein und nur in dieser prototypischen Umgebung existieren. Dies führt dazu, dass der festgelegte Grenzwert möglicherweise nur in dieser Umgebung gute Ergebnisse liefert. 
+
+Ein weiterer kritischer Punkt ist, dass die Erkenntnisse nur bei Audiosignalen getroffen werden konnten, die im Bereich von 6000 RPM aufgenommen wurden. Bei 4000 RPM trat ein Rauschen auf, welches automatische Analysen verhinderte. Insgesamt lässt sich festhalten, dass die erzielten Ergebnisse mit Vorsicht zu betrachten sind und die Methoden zur Analyse der RPM und der Schleifleistung nur in diesem prototypischen Umfeld zuverlässige Ergebnisse liefern können.
+
+Insgesamt können die kritschen Punkte wie folgt zusammengefasst werden.
+\begin{itemize}
+    \item \textbf{Einfluss externer Faktoren}: Die Ergebnisse könnten durch externe Faktoren wie Temperaturschwankungen, Luftfeuchtigkeit oder andere Umgebungsbedingungen beeinflusst werden, die in der kontrollierten Umgebung konstant gehalten wurden. Diese Faktoren könnten in einer realen Anwendung variieren und die Ergebnisse verfälschen.
+    \item \textbf{Materialvariationen}: Die Analyse wurde nur mit einem einzigen Materialtyp durchgeführt. Unterschiede in der Materialhärte, Oberflächenbeschaffenheit oder Zusammensetzung könnten die Schleifgeräusche und damit die Analyseergebnisse erheblich beeinflussen.
+    \item \textbf{Langzeitstabilität}: Es bleibt unklar, wie stabil die Ergebnisse über längere Zeiträume sind. Verschleiß am Schleifer, Veränderungen an den Befestigungen oder andere altersbedingte Faktoren könnten die Zuverlässigkeit der Analyse beeinträchtigen.
+    \item \textbf{Granularität der Daten}: Die Analyse könnte durch die Auflösung der Audiodaten oder die Samplingrate der Aufnahmen beeinflusst werden. Höhere Granularität könnte zu detaillierteren, aber auch zu komplexeren Daten führen, die schwerer zu analysieren sind.
+\end{itemize}
+
+Insgesamt zeigen aber genau diese Ergebnisse, dass es möglich ist, Methoden zu entwickeln, welche eine prädiktive Wartung ermöglichen. Aus diesem Grund haben wir uns auch dafür entschieden, in Kapitel \ref{Kapitel3} mögliche State-of-the-Art-Lösungen zum Thema Künstliche Intelligenz (KI) zu betrachten. Die erzielten Ergebnisse zeigen deutlich, dass Muster in den Daten zu erkennen sind. Diese Muster gilt es nur auszulesen. Dies ist mit ''einfachen'' Algorithmen nicht gelungen, doch der Einsatz von KI scheint hier erfolgversprechend zu sein, da ähnliche Klassifizierungen und Analysen bereits mit Erfolg durchgeführt wurden.
+
+Die Frage, warum diese Arbeit die Analyse mit KI nicht in Betracht gezogen hat, lässt sich durch die unzureichende Datengrundlage erklären. Um eine KI von Grund auf zu trainieren, wäre es notwendig gewesen, mehrere Tausend Daten manuell aufzunehmen und zu labeln, wobei nicht einmal sichergestellt ist, dass die Labels korrekt sind. Daher war es wichtig, zunächst die Daten zu analysieren, um festzustellen, ob überhaupt Muster vorhanden sind, die dann von einer KI analysiert werden könnten.
+
+Zusätzlich zeigt diese Arbeit Möglichkeiten zur Vorverarbeitung von Daten und ermöglicht es, dass nicht alle Daten manuell gelabelt werden müssen. Der aufgezeigte Algorithmus kann dieses Labeln übernehmen, und die Labels müssen dann nur noch stichprobenartig überprüft werden. Insgesamt zeigt diese Arbeit, dass die grundsätzliche Möglichkeit besteht, Eigenschaften des Schleifprozesses aus den Audiosignalen zu extrahieren.
+
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

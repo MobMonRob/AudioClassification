@@ -1,0 +1,475 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Descr:       Vorlage für Berichte der DHBW-Karlsruhe, BibTeX
+%% Author:      Prof. Dr. Jürgen Vollmer, vollmer AT dhbw-karlsruhe.de
+%% $Id: bericht.bib,v 1.10 2016/03/16 12:27:42 vollmer draft $
+%% -*- coding: utf-8 -*-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%
+%%  declararion of abbreviations
+%%%%
+@STRING{addison		= "Addison-Wesley"}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------- Robot Stuff
+
+@online{zunt2004,
+  author = {Dominik Zunt},
+  title = {Who did actually invent the word "robot" and what does it mean?},
+  year = 2004,
+  url = {https://web.archive.org/web/20120204135259/http://capek.misto.cz/english/robot.html},
+  urldate = {2024-03-11}
+}
+
+%------------------------------------------- ROS Stuff
+
+%https://ics.uci.edu/~hjafarpo/Files/PubSubPapers/DEBS2007/TERA.pdf
+@inproceedings{baldoni2007,
+author = {Baldoni, Roberto and Beraldi, Roberto and Quema, Vivien and Querzoni, Leonardo and Tucci-Piergiovanni, Sara},
+title = {TERA: topic-based event routing for peer-to-peer architectures},
+year = {2007},
+isbn = {9781595936653},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1266894.1266898},
+pages = {2–13},
+numpages = {12},
+series = {DEBS '07}
+}
+
+% Ros stuff for audio
+% https://github.com/introlab/audio_utils
+@online{audio_utils,
+  author   = {Marc-Antoine Maheux},
+  title    = {audio_utils},
+  url      = {https://github.com/introlab/audio_utils},
+  urldate  = {2023-10-26}
+}
+
+@online{ros_official,
+  author   = {{Open Robotics}},
+  title    = {ROS Official Website},
+  url      = {https://www.ros.org/},
+  urldate  = {2024-05-14}
+}
+
+@online{ros_wiki_intro,
+  author   = {{Open Robotics}},
+  title    = {ROS Wiki Introduction},
+  url      = {https://wiki.ros.org/ROS/Introduction},
+  urldate  = {2024-05-14}
+}
+
+%------------------------------------------------ Fourier stuff
+@Inbook{Meyer2000,
+author="Meyer-Bäse, Uwe",
+title="Die schnelle Fourier-Transformation (FFT)",
+bookTitle="Schnelle digitale Signalverarbeitung: Algorithmen, Architekturen, Anwendungen",
+year="2000",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="155--181",
+abstract="Die FFT (Fast Fourier Transform), also eine schnelle Berechnung der DFT-Matrix aus (1.3) auf S. 6, nimmt gewi{\ss} einen ganz zentralen Stellenwert in der schnellen digitalen Signalverarbeitung ein. FFT-Algorithmen wurden in verschiedenen Varianten erfunden und teilweise wiedererfunden, wie die {\"U}bersicht von Heideman et al. [117] zeigt. Bereits Gau{\ss} benutzte einen solchen FFT-Algorithmus zur Berechnung astronomischer Daten. Die von Gau{\ss} verwendete FFT ist vom gleichen Typ, wie es heute als Cooley-Tukey-FFT bezeichnet wird.",
+isbn="978-3-642-57245-6",
+doi="10.1007/978-3-642-57245-6_9",
+url="https://doi.org/10.1007/978-3-642-57245-6_9"
+}
+
+@article{Rabiner1969,
+  title={The chirp z-transform algorithm},
+  author={Rabiner, L and Schafer, R W and Rader, C},
+  journal={IEEE transactions on audio and electroacoustics},
+  volume={17},
+  number={2},
+  pages={86--92},
+  year={1969},
+  publisher={IEEE}
+} 
+
+@article{Temperton1992,
+  title={A Generalized Prime Factor FFT Algorithm for any N=2\^{}p3\^{}q5\^{}r},
+  author={Temperton, Clive},
+  journal={SIAM Journal on Scientific and Statistical Computing},
+  volume={13},
+  number={3},
+  pages={676--686},
+  year={1992},
+  publisher={SIAM}
+}
+
+@article{Heckbert1995,
+  title={Fourier transforms and the fast Fourier transform (FFT) algorithm},
+  author={Heckbert, Paul},
+  journal={Computer Graphics},
+  volume={2},
+  number={1995},
+  pages={15--463},
+  year={1995}
+}
+
+@article{Bekele2016,
+  title={Cooley-tukey fft algorithms},
+  author={Bekele, AJAA},
+  journal={Advanced algorithms},
+  year={2016}
+}
+@inproceedings{Aamir2005,
+  title={On Cooley-Tukey FFT method for zero padded signals},
+  author={Aamir, Khalid Mahmood and Maud, Mohammad Ali and Loan, Asim},
+  booktitle={Proceedings of the IEEE Symposium on Emerging Technologies, 2005.},
+  pages={41--45},
+  year={2005},
+  organization={IEEE}
+}
+
+@misc{Burrus2009,
+  title={The cooley-tukey fast fourier transform algorithm},
+  author={Burrus, C},
+  year={2009},
+  publisher={Citeseer}
+}
+
+@book{Fourier1822, 
+place={Cambridge}, 
+series={Cambridge Library Collection - Mathematics}, 
+title={Théorie Analytique de la Chaleur}, 
+publisher={Cambridge University Press}, 
+author={Fourier, Jean Baptiste Joseph}, 
+year={1822}, 
+collection={Cambridge Library Collection - Mathematics}
+} 
+
+@book{Kiencke2008,
+    author       = {Kiencke, Uwe and Schwarz, Michael and Weickert, Thomas},
+    year         = {2008},
+    title        = {Signalverarbeitung, Zeit-Frequenz-Analyse und Schätzverfahren},
+    publisher    = {{Oldenbourg Verlag}},
+    isbn         = {978-3-486-58668-8},
+    language     = {german}
+}
+
+@phdthesis{Okumura2011,
+  title={The short time Fourier transform and local signals},
+  author={Okumura, Shuhei},
+  year={2011},
+  school={Carnegie Mellon University}
+}
+
+% scipy fourier docu
+@online{scipy-fft,
+  author  = {{The SciPy community}},
+  title   = {Fourier Transforms (scipy.fft)},
+  url     = {https://docs.scipy.org/doc/scipy/tutorial/fft.html},
+  urldate = {2024-05-09}
+}
+
+% scipy fourier docu
+@online{scipy-stft,
+  author  = {{The SciPy community}},
+  title   = {Fourier Transforms (scipy.fft)},
+  url     = {https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html},
+  urldate = {2024-05-09}
+}
+
+% matplotlib docu
+@online{matplotlib,
+  author  = {{The Matplotlib development team}},
+  title   = {matplotlib},
+  url     = {https://matplotlib.org/stable/api/matplotlib_configuration_api.html},
+  urldate = {2024-05-09}
+}
+
+% glaub recht anschauliche erklärung zu Wavelets
+% https://www.intechopen.com/chapters/74096
+@incollection{Wirsing2020,
+author = {Karlton Wirsing},
+title = {Time Frequency Analysis of Wavelet and Fourier Transform},
+booktitle = {Wavelet Theory},
+publisher = {IntechOpen},
+address = {Rijeka},
+year = {2020},
+editor = {Somayeh Mohammady},
+chapter = {1},
+doi = {10.5772/intechopen.94521},
+url = {https://doi.org/10.5772/intechopen.94521}
+}
+
+% https://www-ee.stanford.edu/~hellman/publications/24.pdf
+@article{cooley-tukey:1965,
+    author = {James W. Cooley and John W. Tukey},
+    title = {An algorithm for the machine calculation of complex Fourier series},
+    journal = {Mathematics of Computation},
+    volume = {19},
+    pages = {297--301},
+    year = {1965}
+}
+
+https://www.researchgate.net/publication/3321463_The_sliding_DFT
+@article{Jacobsen2003,
+author = {Jacobsen, Eric and Lyons, Richard},
+year = {2003},
+month = {04},
+pages = {74 - 80},
+title = {The sliding DFT},
+volume = {20},
+journal = {Signal Processing Magazine, IEEE},
+doi = {10.1109/MSP.2003.1184347}
+}
+
+https://www.cs.unm.edu/~williams/cs530/arfgtw.pdf
+@article{Valens2000,
+author = {Valens, C.},
+year = {2000},
+month = {10},
+pages = {},
+title = {A Really Friendly Guide to Wavelets}
+}
+
+@article{Kaiser2011,
+author = {Kaiser, Gerald},
+year = {2011},
+month = {11},
+pages = {300},
+title = {A Friendly Guide to Wavelets},
+doi = {https://doi.org/10.1007/978-0-8176-8111-1},
+journal = {Birkhauser, Boston},
+}
+
+%--------------------------------------- Wavelets
+
+% https://link.springer.com/content/pdf/10.1007/s001700050062.pdf
+@article{Lee1999,
+  title={Application of the Discrete Wavelet Transform to the Monitoring of Tool Failure in End Milling Using the Spindle Motor Current},
+  author={Bean Yin Lee},
+  journal={The International Journal of Advanced Manufacturing Technology},
+  year={1999},
+  volume={15},
+  pages={238-243},
+  url={https://api.semanticscholar.org/CorpusID:109908427}
+}
+
+%------------------------------------------------------------ CWT Stuff
+
+% Beispiele, wie bestimmet sachen in CWT aussehen
+% https://journals.ametsoc.org/view/journals/bams/76/12/1520-0477_1995_076_2391_csduwt_2_0_co_2.xml?tab_body=pdf
+@article { Lau1995,
+      author = "K.-M. Lau and Hengyi Weng",
+      title = "Climate Signal Detection Using Wavelet Transform: How to Make a Time Series Sing",
+      journal = "Bulletin of the American Meteorological Society",
+      year = "1995",
+      publisher = "American Meteorological Society",
+      address = "Boston MA, USA",
+      volume = "76",
+      number = "12",
+      doi = "10.1175/1520-0477(1995)076<2391:CSDUWT>2.0.CO;2",
+      pages=      "2391 - 2402",
+      url = "https://journals.ametsoc.org/view/journals/bams/76/12/1520-0477_1995_076_2391_csduwt_2_0_co_2.xml"
+}
+
+% Grundlagen zu CWT und Verwendung
+% https://github.com/ct6502/wavelets
+% https://paos.colorado.edu/research/wavelets/
+% https://paos.colorado.edu/research/wavelets/bams_79_01_0061.pdf
+@article { Torrence1998,
+      author = "Christopher Torrence and Gilbert P. Compo",
+      title = "A Practical Guide to Wavelet Analysis",
+      journal = "Bulletin of the American Meteorological Society",
+      year = "1998",
+      publisher = "American Meteorological Society",
+      address = "Boston MA, USA",
+      volume = "79",
+      number = "1",
+      doi = "10.1175/1520-0477(1998)079<0061:APGTWA>2.0.CO;2",
+      pages=      "61 - 78",
+      url = "https://journals.ametsoc.org/view/journals/bams/79/1/1520-0477_1998_079_0061_apgtwa_2_0_co_2.xml"
+}
+
+% Weiß nicht, ob das irgendwie wichtig ist
+% https://paos.colorado.edu/research/wavelets/interdecadal.pdf
+@article { Torrence1999,
+      author = "Christopher Torrence and Peter J. Webster",
+      title = "Interdecadal Changes in the ENSO–Monsoon System",
+      journal = "Journal of Climate",
+      year = "1999",
+      publisher = "American Meteorological Society",
+      address = "Boston MA, USA",
+      volume = "12",
+      number = "8",
+      doi = "10.1175/1520-0442(1999)012<2679:ICITEM>2.0.CO;2",
+      pages=      "2679 - 2690",
+      url = "https://journals.ametsoc.org/view/journals/clim/12/8/1520-0442_1999_012_2679_icitem_2.0.co_2.xml"
+}
+
+% Areawise testing
+% https://npg.copernicus.org/articles/23/45/2016/npg-23-45-2016.pdf
+@Article{Schulte2016,
+AUTHOR = {Schulte, J. A.},
+TITLE = {Cumulative areawise testing in wavelet analysis and its application to
+geophysical time series},
+JOURNAL = {Nonlinear Processes in Geophysics},
+VOLUME = {23},
+YEAR = {2016},
+NUMBER = {1},
+PAGES = {45--57},
+URL = {https://npg.copernicus.org/articles/23/45/2016/},
+DOI = {10.5194/npg-23-45-2016}
+}
+
+% Beispiele zu Statistical testing
+% https://npg.copernicus.org/articles/26/91/2019/npg-26-91-2019.pdf
+@Article{Schulte2019,
+AUTHOR = {Schulte, J. A.},
+TITLE = {Statistical hypothesis testing in wavelet analysis: theoretical developments
+and applications to Indian rainfall},
+JOURNAL = {Nonlinear Processes in Geophysics},
+VOLUME = {26},
+YEAR = {2019},
+NUMBER = {2},
+PAGES = {91--108},
+URL = {https://npg.copernicus.org/articles/26/91/2019/},
+DOI = {10.5194/npg-26-91-2019}
+}
+
+% Librosa guide, weiß nicht wie wichtig
+% https://pypi.org/project/librosa/
+% http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf
+@article{Schmidbauer2018,
+author = {Schmidbauer, Harald and Roesch, Angi},
+year = {2018},
+month = {03},
+pages = {},
+title = {WaveletComp 1.1: A guided tour through the R package}
+}
+
+%---------------- significancy testing
+
+% Problems with Point wise teesting
+% https://npg.copernicus.org/articles/11/505/2004/npg-11-505-2004.pdf
+@Article{Maraun2004,
+AUTHOR = {Maraun, D. and Kurths, J.},
+TITLE = {Cross wavelet analysis: significance testing and pitfalls},
+JOURNAL = {Nonlinear Processes in Geophysics},
+VOLUME = {11},
+YEAR = {2004},
+NUMBER = {4},
+PAGES = {505--514},
+URL = {https://npg.copernicus.org/articles/11/505/2004/},
+DOI = {10.5194/npg-11-505-2004}
+}
+
+% Area wise testing
+% https://www.researchgate.net/publication/6449451_Nonstationary_Gaussian_processes_in_wavelet_domain_Synthesis_estimation_and_significance_testing
+@article{Maraun2007,
+author = {Maraun, Douglas and Kurths, Juergen and Holschneider, Matthias},
+year = {2007},
+month = {02},
+pages = {016707},
+title = {Nonstationary Gaussian processes in wavelet domain: Synthesis, estimation, and significance testing},
+volume = {75},
+journal = {Physical review. E, Statistical, nonlinear, and soft matter physics},
+doi = {10.1103/PhysRevE.75.016707}
+}
+
+%--------------------------------------------------------------
+@InCollection{uncertainty2024,
+	author       =	{Hilgevoord, Jan and Uffink, Jos},
+	title        =	{{The Uncertainty Principle}},
+	booktitle    =	{The {Stanford} Encyclopedia of Philosophy},
+	editor       =	{Edward N. Zalta and Uri Nodelman},
+	howpublished =	{\url{https://plato.stanford.edu/archives/spr2024/entries/qt-uncertainty/}},
+	year         =	{2024},
+	edition      =	{{S}pring 2024},
+	publisher    =	{Metaphysics Research Lab, Stanford University}
+}
+
+@article{Yang2019,
+  author  = {Yang, Ruo-Yu and Rai, Rahul},
+  title   = {Machine auscultation: enabling machine diagnostics using convolutional neural networks and large-scale machine audio data},
+  journal = {Advances in Manufacturing},
+  year    = {2019},
+  volume  = {7},
+  pages   = {174--187},
+  doi     = {10.1007/s40436-019-00254-5}
+}
+
+@article{Cheng2018,
+  author  = {Cheng, Can and Li, Jianyong and Liu, Yueming and Nie, Meng and Wang, Wenxi},
+  title   = {Deep convolutional neural network-based in-process tool condition monitoring in abrasive belt grinding},
+  journal = {Journal of Manufacturing Processes},
+  year    = {2018},
+  volume  = {42},
+  pages   = {53--64},
+  doi     = {10.1016/j.compind.2018.12.002}
+}
+
+@article{Liu2022,
+  author  = {Liu, Chenyu and Meerten, Yannik and Declercq, Katrien and Gryllias, Konstantinos},
+  title   = {Vibration-based gear continuous generating grinding fault classification and interpretation with deep convolutional neural network},
+  journal = {Journal of Manufacturing Processes},
+  year    = {2022},
+  volume  = {64},
+  pages   = {1298--1312},
+  doi     = {10.1016/j.jmapro.2022.04.068}
+}
+
+@article{Nakai2015,
+  author  = {Mauricio Eiji Nakai},
+  title   = {Evaluation of neural models applied to the estimation of tool wear in the grinding of advanced ceramics},
+  journal = {Expert Systems with Applications},
+  year    = {2015},
+  volume  = {42},
+  pages   = {7026--7035},
+  doi     = {10.1016/j.eswa.2015.05.008}
+}
+
+
+@article{xiang2023,
+  author       = {Yingjian Xiang and Jiahao Chen and Chengle Bao},
+  title        = {Predictive Modeling and Analysis of Material Removal Characteristics for Robotic Belt Grinding of Complex Blade},
+  journal      = {Applied Sciences},
+  volume       = {13},
+  number       = {7},
+  pages        = {4248},
+  year         = {2023},
+  doi          = {10.3390/app13074248},
+  publisher    = {MDPI AG},
+  url          = {https://www.mdpi.com/2076-3417/13/7/4248}
+}
+
+@article{plos2021,
+  author       = {Guoyang Wan and Guofeng Wang and Yunsheng Fan},
+  title        = {A Robotic grinding station based on an industrial manipulator and vision system},
+  journal      = {PLOS ONE},
+  year         = {2021},
+  doi          = {10.1371/journal.pone.0248993},
+  publisher    = {Public Library of Science},
+  url          = {https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0248993}
+}
+
+
+
+
+%bilder quellen
+@online{versätze,
+  author = {stack-exchange},
+  url     = {https://i.stack.imgur.com/ZriSV.png},
+  urldate = {2024-05-09},
+  year = {2023},
+}
+
+@online{hopAWindow,
+  author = {noobdoaaa},
+  url     = {https://www.noobdoaaa.com/content/2019/19/5cd54e70a06d3.png},
+  urldate = {2024-05-09},
+  year = {2019},
+}
+
+@online{windowFunctions,
+  author = {semantic},
+  url     = {https://www.semanticscholar.org/paper/Hst.582j-6.555j-16.456j-Biomedical-Signal-and-Image-Delgutte-Greenberg/971fb3c899d90fc5656c08daa8ba6b9844da2246/figure/3},
+  urldate = {2024-05-09},
+  year = {2007},
+}
+
+

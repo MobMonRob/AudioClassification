@@ -1,0 +1,6 @@
+librosa
+numpy
+scipy
+ros
+rospy
+std_msgs
